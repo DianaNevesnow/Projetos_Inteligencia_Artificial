@@ -16,7 +16,7 @@ siC(paciente(nao_existe,_,_,_,_), consulta(nao_existe,_,_,_,_,_,_), R8). % falso
 % ==================================================
 paciente(p001, Nome, Data, Sexo, Morada).          % Ana Silva
 consulta(c001, Data, Pac, Idade, Dia, Sis, Pulso). % p001, 82/125
-tensao(ta02, Class, SInf, SSup, DInf, DSup).       % otima: 90-120/60-80
+tensao_arterial(ta02, Class, SInf, SSup, DInf, DSup).       % otima: 90-120/60-80
 
 % ==================================================
 % TESTES CWA (PRESSUPOSTO MUNDO FECHADO)
@@ -60,8 +60,8 @@ avaliar_risco(p005, Risco4).                       % baixo
 % ==================================================
 % TESTES CONHECIMENTO NEGATIVO
 % ==================================================
--tensao(_,_,100,_,110,_).                          % true (SistInf < DiastInf)
--tensao(_,_,120,_,80,_).                           % false
+-tensao_arterial(_,_,100,_,110,_).                          % true (SistInf < DiastInf)
+-tensao_arterial(_,_,120,_,80,_).                           % false
 
 % ==================================================
 % TESTES RELATÓRIOS E LISTAGENS
