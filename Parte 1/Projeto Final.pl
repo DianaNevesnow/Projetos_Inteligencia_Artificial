@@ -109,14 +109,14 @@ comprimento([_|T], N) :-
 
 % paciente(IdPaciente, Nome, DataNascimento, Sexo, Morada)
 paciente(p001, 'Ana Silva', date(1980,5,10), 'feminino', 'Rua A, 12').
-paciente(p002, 'João Costa', date(1975,2,20), 'masculino', 'Rua B, 45').
+paciente(p002, 'Joao Costa', date(1975,2,20), 'masculino', 'Rua B, 45').
 paciente(p003, 'Maria Dias', date(1990,7,1), 'feminino', 'Rua C, 9').
 paciente(p004, 'Carlos Lima', date(1966,11,15), 'masculino', 'Av. D, 10').
 paciente(p005, 'Daniela Faria', date(1993,8,22), 'feminino', 'Trav. E, 1').
 paciente(p006, 'Eduardo Gomes', date(1959,3,30), 'masculino', 'Lg. F, 2').
 paciente(p007, 'Filipa Henriques', date(1989,4,12), 'feminino', 'Pr. G, 15').
-paciente(p008, 'Gonçalo Isidro', date(1977,1,7), 'masculino', 'Beco H, 3').
-paciente(p009, 'Inês Janeiro', date(1996,10,25), 'feminino', 'Estrada I, 7').
+paciente(p008, 'Goncalo Isidro', date(1977,1,7), 'masculino', 'Beco H, 3').
+paciente(p009, 'Ines Janeiro', date(1996,10,25), 'feminino', 'Estrada I, 7').
 
 % consulta(IdConsulta, Data, IdPaciente, Idade, Diastolica, Sistolica, Pulsacao)
 consulta(c001, (9,1,2024), p001, 38, 82, 125, 72). % TA Normal
@@ -229,9 +229,9 @@ relatorio_paciente_detalhado(Pac) :-
     format('Data Nascimento: ~w~n', [DataNasc]),
     format('Sexo: ~w~n', [Sexo]),
     format('Morada: ~w~n', [Morada]),
-    format('Classificação Tensão: ~w~n', [Classe]),
-    format('Nível de Risco: ~w~n', [Risco]),
-    format('--- Histórico de Consultas ---~n', []),
+    format('Classificação Tensao: ~w~n', [Classe]),
+    format('Nivel de Risco: ~w~n', [Risco]),
+    format('--- Historico de Consultas ---~n', []),
     listar_consultas(Pac).
 
 % Listar consultas de um paciente 
@@ -247,7 +247,7 @@ listar_consultas(Pac) :-
 % Auxiliar de listagem
 listar_consultas_aux([]).
 listar_consultas_aux([(Data, Dia, Sis, Pulso)|T]) :-
-    format('  Data: ~w | TA Diastólica: ~w | TA Sistólica: ~w | Pulsação: ~w~n', [Data, Dia, Sis, Pulso]),
+    format('  Data: ~w | TA Diastolica: ~w | TA Sistolica: ~w | Pulsacao: ~w~n', [Data, Dia, Sis, Pulso]),
     listar_consultas_aux(T).
 
 listar_pacientes :-
